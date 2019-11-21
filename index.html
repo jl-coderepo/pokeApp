@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>Pokedex Webapp</title>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="main-header">
+        <div class="flex-container">
+            <div id="header-text">
+                <h1>Pokemon App</h1>
+            </div>
+            <div id="header-items">
+                <div class="content-wrapper">
+                    <a class="btn" href="https://github.com/jl-coderepo/jl-coderepo.github.io" role="Button" aria-label="clickable link to the github repository for this app">
+                        Repository
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main -->
+    <main id="main" role="main" aria-label="the main area with pokemon search and results.">
+        <section class="flex-container" role="Grid" aria-label="area grid-like format.">
+
+            <div id="query-segment">
+                <h2 tabindex="0">Find Your Pokemon</h2>
+                <form action="#">
+                    <label for="pokemonSearchField">Please search Pokemon either by name or number.</label>
+                    <input type="text" id="pokemonSearchField" placeholder="pikachu.">
+                    <input class="btn" type="button" value="Submit">
+                </form>
+                <p id='bad-search' style="display: none">Sorry, couldn't find the Pokemon searched!</p>
+            </div>
+
+            <div id="display-segment" class="grid-container">
+
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="main-footer">
+        <div class="flex-container">
+            <div id="footer-text">
+                <p>Created by June Lee</p>
+            </div>
+            <div id="footer-items">
+                <!-- nothing to place in here, leaving as is for templating purposes -->
+            </div>
+        </div>
+    </footer>
+
+<!-- Template -->
+
+    <div class="poke-card" style="display: none">
+        <div class="sr-only" tabindex="0">
+            This is the pokemon card.
+        </div>
+
+        <div class="poke-image" name="poke image" role="figure">
+            <div class="sr-only" tabindex="0">
+                The top half of the card contains an image of the pokemon.
+            </div>
+            <figure>
+                <img src="./images/pokeball.png" alt="image of pokemon" aria-hidden="true">
+            </figure>
+        </div>
+
+        <div class="poke-content" role="document">
+            <div class="sr-only" tabindex="0">
+                The bottom half contains content of searched pokemon.
+            </div>
+                <h6 class="poke-name" tabindex="0">Placeholdermon</h6>
+            <div class="poke-flex poke-id">
+                <div class="col-left" tabindex="0">
+                    ID
+                </div>
+                <div class="col-right" tabindex="0">
+                    222
+                </div>
+            </div>    
+            <div class="poke-flex poke-type">
+                <div class="col-left" tabindex="0">
+                    Types
+                </div>
+                <div class="col-right" tabindex="0">
+                    Grass
+                </div>
+            </div>    
+            <div class="poke-flex poke-ability">
+                <div class="col-left" tabindex="0">
+                    Abilities
+                </div>
+                <div class="col-right" tabindex="0">
+                    Hydrate
+                </div>
+            </div>    
+        </div>
+    </div>
+
+<!-- Script -->
+<script rel="script" type="text/javascript" src="./script.js"></script>
+</body>
+</html>

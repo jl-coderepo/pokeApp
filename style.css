@@ -1,0 +1,304 @@
+/* 
+    ---- Color Theme and other Variables ----
+
+        #0B0C10 >> background, almost black
+            - utilize as default background
+        #1F2833 >> foreground, dark gray
+            - utilize when an element needs to be above the background
+        #C5C6C7 >> light gray
+            - ??? under utilized
+        #66FCF1 >> super accent
+            - primary stylized text color
+        #45A29E >> dull accent
+            - secondary stylized text color
+*/
+:root{
+    --main-bg: #0B0C10;
+    --main-fg: #1F2833;
+    --inp-bg: #C5C6C7;
+    --pri-txt: #66FCF1;
+    --sec-txt: #45A29E;
+}
+
+
+/* ---- Core Styles ---- */
+/* specifically hide elements visually, but allow screen readers*/
+.sr-only {
+    border: 0; 
+    clip: rect(0 0 0 0); 
+    clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+    -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+    height: 1px; 
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--main-bg);
+    color: #fff;
+    font-size: 1.1em;
+    line-height: 1.5;
+    text-align: center;
+}
+img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+h1, h2, h3{
+    margin: 0;
+    padding: 0.30em 0;
+}
+p{
+    margin:0;
+    padding: 0.75em 0;
+}
+.btn{
+    display: inline-block;
+    background: var(--main-bg);
+    color: var(--sec-txt);
+    font-size: 0.69em;
+    text-decoration: none;
+    padding: 0.38em 1.40em;
+    border: 1.2px solid var(--sec-txt);
+    border-radius: 5%;
+    margin: 0.20em 0.35em;
+    cursor: pointer;
+}
+.btn:hover{
+    background: var(--pri-txt);;
+    color: var(--main-bg);
+}
+/*All flex containers*/
+/* .flex-container{
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+
+/* ---- Header ---- */
+#main-header{
+    background: var(--main-fg);
+    min-height: 170px;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+#header-text{
+    padding-top:2.5em;
+}
+#header-text h1{
+    color: var(--pri-txt);
+    font-size: 1.75em;
+}
+#header-items{
+    /* if more than one item in future convert to hamburger */
+    padding-top:0.20em;
+}
+#header-items div.content-wrapper{
+    /* since only one item, manually positioning */
+    position: relative;
+    margin: auto;
+    top: 20%;
+}
+
+
+/* ---- Main ---- */
+#main{
+    width: 100%;
+    top: 60px;
+    font-size: 0.80em;
+}
+
+/*   |_query-segment */
+#query-segment{
+    /* for mobile probably best to fix the query-segment too*/
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--main-bg);
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 0.5em;
+}
+#query-segment label{
+    display: block;
+    font-size: 0.95em;
+    padding-bottom: 0.2em;
+}
+#query-segment #pokemonSearchField, textarea{
+    background: var(--inp-bg);
+    border: 1.2px var(--sec-txt) solid;
+    border-radius: 3%;
+    color: black;
+}
+#query-segment #pokemonSearchField{
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+#query-segment input.btn{
+    display: block;
+    margin: auto;
+    margin-top: 1.75em;
+    margin-bottom: 0.25em;
+}
+
+/*   |_display-segment */
+#display-segment{
+    width: 100%;
+}
+#display-segment div.poke-card{
+    width: 85%;
+    margin: auto;
+    border: 0.70px var(--sec-txt) solid;
+}
+#display-segment div.poke-image figure{
+    display: block;
+    width: 80%;
+    margin: auto;
+    padding-top: 5%;
+}
+#diplay-segment div.poke-image{
+    width: 50%;
+}
+#display-segment div.poke-content{
+    width: 100%;
+    margin: auto;
+    background: var(--main-fg);
+    color: white;
+}
+#display-segment h6.poke-name{
+    color: var(--pri-txt);
+    font-size: 1.25em;
+    padding-bottom: 0;
+    padding-top: 1em;
+    height: 0;
+}
+#display-segment div.poke-flex{
+    display: flex;
+}
+#display-segment div.col-left{
+    flex: 1;
+    text-align: right;
+    padding-right: 0.55em;
+    color: var(--pri-txt);
+}
+#display-segment div.col-right{
+    flex: 3;
+    text-align: left;
+    padding-left: 0.50em;
+    color: var(--pri-txt);
+}
+
+/* ---- Footer ---- */
+#main-footer{
+    position: fixed;
+    z-index: 1;
+    background: var(--main-bg);
+    min-height: 30px;
+    bottom:0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+#footer-text p{
+    font-size: 0.55em;
+    padding: 0.5em 1em;
+    text-align: right;
+}
+
+
+/* ---- Desktop ---- */
+@media(min-width: 961px){
+    /* ---- Core Styles ---- */
+    /*All flex containers*/
+    .flex-container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+    /* ---- Header ---- */
+    #header-text{
+        padding-top:2.5em;
+        flex: 3;
+    }
+    #header-text h1{
+        color: var(--pri-txt);
+        font-size: 2.95em;
+    }
+    #header-items{
+        /* if more than one item in future convert to hamburger */
+        padding-top:0.20em;
+        flex: 1;
+    }
+    #header-items div.content-wrapper{
+        /* since only one item, manually positioning */
+        position: relative;
+        margin: auto;
+        top: 52%;
+    }
+    #header-items a.btn{
+        padding: 0.57em 2.1em;
+        font-size: 1.04em;
+    }
+
+
+    /* ---- Main ---- */
+    #main{
+        font-size: 1.20em;
+    }
+
+    /*   |_query-segment */
+    #query-segment{
+        /* for mobile probably best to fix the query-segment too*/
+        position: static;
+        flex: 1;
+    }
+    #query-segment label{
+        font-size: 0.95em;
+    }
+    #query-segment #pokemonSearchField, textarea{
+        padding: 0.45em 0.45em;
+    }
+    #query-segment #pokemonSearchField{
+        display: inline-block;
+        width: 47%;
+        margin-right:0.70em;
+        padding: 0.45em 0.15em;
+        font-size: 0.77em;
+    }
+    #query-segment input.btn{
+        display: inline-block;
+        font-size: 0.77em;
+        margin-top: 1.75em;
+        margin-bottom: 0.45em;
+    }
+
+    /*   |_display-segment */
+    #display-segment{
+        flex: 3;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    #display-segment div.poke-card{
+        flex: 1 1 21%;
+        max-width: 20%;
+
+        margin: 9px;
+        border: 1.20px var(--sec-txt) solid;
+        font-size: 0.75em;
+    }
+    #display-segment h6.poke-name{
+        font-size: 1.15em;
+        padding-top: 0.75em;
+    }
+}
